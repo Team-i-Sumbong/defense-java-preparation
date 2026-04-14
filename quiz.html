@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i-Sumbong Quiz Bank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="hero__content">
+        <nav class="top-nav" aria-label="Primary">
+          <a class="top-nav__brand" href="index.html">i-Sumbong Defense Course</a>
+          <div class="top-nav__links">
+            <a class="top-nav__link" href="index.html">Course</a>
+            <a class="top-nav__link" href="java-review.html">Java Review</a>
+            <a class="top-nav__link is-active" href="quiz.html">Quiz Bank</a>
+          </div>
+        </nav>
+
+        <div class="brand-row">
+          <img class="brand-row__logo" src="logo.png" alt="i-Sumbong brand mark">
+          <div>
+            <p class="eyebrow">Quiz Bank</p>
+            <h1>Practice the defense with graded multiple-choice drills.</h1>
+          </div>
+        </div>
+
+        <div class="hero__grid">
+          <section class="hero-card hero-card--lead">
+            <p class="hero-card__label">How It Works</p>
+            <p class="hero-card__copy">
+              Choose a difficulty, answer 15 questions, and review the feedback. The quiz is designed to
+              reinforce principles first, then connect them back to the i-Sumbong Java system.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="index.html">Back to Course</a>
+              <button class="button button--ghost" id="jump-to-quiz" type="button">Start Answering</button>
+            </div>
+          </section>
+
+          <section class="hero-card">
+            <p class="hero-card__label">Difficulty Guide</p>
+            <ul class="plain-list">
+              <li><strong>Easy:</strong> vocabulary, basic roles, and simple code reading</li>
+              <li><strong>Medium:</strong> responsibility analysis and flow tracing</li>
+              <li><strong>Hard:</strong> design reasoning, critique, and defense phrasing</li>
+            </ul>
+          </section>
+
+          <section class="hero-card hero-card--score">
+            <p class="hero-card__label">Active Difficulty</p>
+            <div class="score-ring">
+              <span id="difficulty-code">E</span>
+            </div>
+            <p class="hero-card__copy" id="difficulty-label">Easy</p>
+          </section>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-shell" id="quiz-root">
+      <aside class="sidebar">
+        <div class="sidebar__panel">
+          <p class="sidebar__title">Select Difficulty</p>
+          <div class="difficulty-switcher">
+            <button class="difficulty-button is-selected" data-difficulty="easy" type="button">Easy</button>
+            <button class="difficulty-button" data-difficulty="medium" type="button">Medium</button>
+            <button class="difficulty-button" data-difficulty="hard" type="button">Hard</button>
+          </div>
+        </div>
+
+        <div class="sidebar__panel">
+          <p class="sidebar__title">Coverage</p>
+          <div class="stack-tags">
+            <span>Architecture</span>
+            <span>OOP</span>
+            <span>Encapsulation</span>
+            <span>Flow</span>
+            <span>Repository</span>
+            <span>Defense Logic</span>
+          </div>
+        </div>
+
+        <div class="sidebar__panel sidebar__panel--accent">
+          <p class="sidebar__title">Quiz Strategy</p>
+          <p class="sidebar__copy">
+            Read every choice by responsibility. The strongest answer usually names the principle,
+            not only the file or method.
+          </p>
+        </div>
+      </aside>
+
+      <section class="quiz-layout">
+        <div class="summary-strip">
+          <article class="summary-card">
+            <p class="summary-card__label">Questions</p>
+            <p class="summary-card__value">15</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card__label">Answered</p>
+            <p class="summary-card__value" id="answered-count">0</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card__label">Current Score</p>
+            <p class="summary-card__value" id="score-count">0</p>
+          </article>
+        </div>
+
+        <section class="quiz-panel">
+          <div class="quiz-panel__header">
+            <div>
+              <p class="eyebrow">Current Set</p>
+              <h2 id="quiz-title">Easy Quiz</h2>
+            </div>
+            <button class="button button--ghost button--compact" id="reset-quiz" type="button">Reset Difficulty</button>
+          </div>
+
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-bar__fill" id="progress-bar-fill"></div>
+          </div>
+
+          <div class="question-list" id="question-list"></div>
+
+          <div class="quiz-actions">
+            <button class="button button--primary" id="submit-quiz" type="button">Submit Answers</button>
+          </div>
+        </section>
+
+        <section class="result-panel" id="result-panel">
+          <p class="eyebrow">Result</p>
+          <h2 id="result-title">Finish the quiz to see your evaluation.</h2>
+          <p class="result-score" id="result-score">0 / 15</p>
+          <p class="result-copy" id="result-copy">
+            This panel will summarize your performance and tell you whether you are ready to move up in difficulty.
+          </p>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
