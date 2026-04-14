@@ -50,7 +50,7 @@ let quoteIndex = 0;
 
 function renderQuote() {
   const quote = quotes[quoteIndex];
-  quoteBox.textContent = `“${quote.text}”`;
+  quoteBox.textContent = `"${quote.text}"`;
   quoteAuthor.textContent = quote.author;
 }
 

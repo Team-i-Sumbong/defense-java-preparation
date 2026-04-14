@@ -276,6 +276,10 @@ code {
   position: sticky;
   top: 18px;
   align-self: start;
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-gutter: stable;
 }
 
 .sidebar__panel {
@@ -337,6 +341,7 @@ code {
   color: var(--primary-deep);
   font-weight: 700;
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .quiz-layout {
@@ -531,6 +536,9 @@ code {
 
   .sidebar {
     position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 }
 
