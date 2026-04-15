@@ -1,133 +1,125 @@
 const progressChecks = document.querySelectorAll(".progress-check");
 const progressValue = document.getElementById("progress-value");
 const startReviewButton = document.getElementById("start-review");
-const flashcards = document.querySelectorAll("[data-flashcard]");
 const flowSteps = document.querySelectorAll(".flow-step");
 const flowToggles = document.querySelectorAll(".flow-toggle");
 const flowOutput = document.getElementById("flow-output");
-const quizOptions = document.querySelectorAll(".quiz-option");
-const quizFeedback = document.getElementById("quiz-feedback");
-const promptButtons = document.querySelectorAll(".prompt-button:not(.scenario-button)");
+const promptButtons = document.querySelectorAll(".prompt-button");
 const promptAnswer = document.getElementById("prompt-answer");
-const scenarioButtons = document.querySelectorAll(".scenario-button");
-const scenarioQuestion = document.getElementById("scenario-question");
-const scenarioAnswer = document.getElementById("scenario-answer");
+const progressStorageKey = "defense-course-progress";
 
 const flowTracks = {
   login: [
     {
-      button: "1. User opens app",
-      title: "1. User opens app",
-      body: "The system begins in App.java, creates the main stage, and prepares the first visible screen."
+      button: "1. UI receives input",
+      title: "1. UI receives input",
+      body: "AuthPortalView collects the user's email, password, and account type through the visible interface."
     },
     {
-      button: "2. UI collects input",
-      title: "2. UI collects input",
-      body: "AuthPortalView gathers the email, password, and account type from JavaFX controls."
+      button: "2. Service checks rules",
+      title: "2. Service checks rules",
+      body: "AuthService validates the credentials and checks account conditions such as verification and access state."
     },
     {
-      button: "3. Service applies rules",
-      title: "3. Service applies rules",
-      body: "AuthService checks passwords, verification status, account type, and activation state."
+      button: "3. Repository reads data",
+      title: "3. Repository reads data",
+      body: "The repository provides the stored account data needed by the service to make a decision."
     },
     {
-      button: "4. Repository accesses data",
-      title: "4. Repository accesses data",
-      body: "UserRepository or AdminRepository reads the stored user records used by the service for decision-making."
-    },
-    {
-      button: "5. System decides result",
-      title: "5. System decides result",
-      body: "The system determines whether login succeeds or fails based on business rules and stored account data."
-    },
-    {
-      button: "6. UI shows outcome",
-      title: "6. UI shows outcome",
-      body: "The app either opens the correct dashboard or displays a feedback message to the user."
+      button: "4. UI shows result",
+      title: "4. UI shows result",
+      body: "The user either sees an error message or reaches the correct dashboard after the service finishes."
     }
   ],
   report: [
     {
-      button: "1. User opens report form",
-      title: "1. User opens report form",
-      body: "A resident reaches the report screen through the application interface after logging in."
+      button: "1. UI receives input",
+      title: "1. UI receives input",
+      body: "The report form collects the title, description, category, and location from the resident."
     },
     {
-      button: "2. UI collects details",
-      title: "2. UI collects details",
-      body: "The view gathers title, description, location, category, and optional image information."
+      button: "2. Service checks rules",
+      title: "2. Service checks rules",
+      body: "ReportService validates required fields, prepares IDs, and sets default values before saving."
     },
     {
-      button: "3. Service validates data",
-      title: "3. Service validates data",
-      body: "ReportService checks required fields, assigns IDs, adds timestamps, and sets the default status."
+      button: "3. Repository writes data",
+      title: "3. Repository writes data",
+      body: "ReportRepository stores the report record, and related repositories can record status history."
     },
     {
-      button: "4. Repository saves record",
-      title: "4. Repository saves record",
-      body: "ReportRepository writes the report into shared JSON storage, while StatusLogRepository records status history."
-    },
-    {
-      button: "5. System creates result",
-      title: "5. System creates result",
-      body: "The application stores the report successfully and prepares the confirmation or updated dashboard state."
-    },
-    {
-      button: "6. UI shows outcome",
-      title: "6. UI shows outcome",
-      body: "The user sees a success message or refreshed report list, confirming the submission result."
+      button: "4. UI shows result",
+      title: "4. UI shows result",
+      body: "The interface confirms that the report was submitted or shows the next visible state to the user."
     }
   ]
 };
 
 const promptAnswers = {
   "Why did you separate UI and service classes?":
-    "We separated them to follow separation of concerns. The UI handles interaction, while the service layer handles business rules, which makes the system easier to maintain, test, and explain.",
-  "What is the purpose of getters and setters in your model?":
-    "They support encapsulation by giving controlled access to object data. This keeps the model organized and makes future validation or logic easier to add.",
-  "How does the login flow move through the system?":
-    "The login flow begins in the UI, where AuthPortalView collects user input. It then calls AuthService, which checks the rules and repository data, and the UI shows either an error or the correct dashboard.",
+    "We separated them to follow separation of concerns. The UI handles interaction, while the service layer applies business rules, which makes the system easier to maintain and explain.",
   "Why use repositories instead of putting all logic in the UI?":
-    "Repositories are responsible for persistence, not interaction. Keeping storage code out of the UI avoids mixing concerns and keeps each layer focused on one responsibility.",
-  "What design principle does IssueReport demonstrate?":
-    "IssueReport demonstrates modeling and abstraction. It represents a real domain entity, a submitted concern, in a structured object that other layers can use consistently."
-};
-
-const scenarioResponses = {
-  "Why not put login validation in the UI?": {
-    question: "A panelist asks: why not put login validation directly inside the JavaFX view?",
-    answer:
-      "Because the UI should handle interaction, not business policy. If login rules stay in AuthService, they can be reused, tested, and changed without rewriting screen logic."
-  },
-  "Why is ReportRepository not part of the model?": {
-    question: "A panelist asks: why is ReportRepository not considered part of the model layer?",
-    answer:
-      "Because ReportRepository does not represent a real entity. Its responsibility is persistence, meaning it manages how report data is saved and retrieved, while the model represents the report itself."
-  },
-  "Why is AuthPortalView a maintainability discussion point?": {
-    question: "A panelist asks: why is AuthPortalView a good maintainability discussion point?",
-    answer:
-      "Because it handles many UI states and workflows in one class. It works, but its size shows how UI classes can become harder to maintain over time and may later benefit from being split into smaller focused views."
-  }
+    "Repositories isolate persistence. That keeps storage details out of the UI so screen code stays focused on interaction and service code stays focused on rules.",
+  "How does the login flow move through the system?":
+    "The UI collects input, AuthService checks the rules, the repository provides account data, and the UI shows the final result to the user."
 };
 
 let activeTrack = "login";
 
+function loadSavedProgress() {
+  try {
+    const raw = window.localStorage.getItem(progressStorageKey);
+    if (!raw) {
+      return;
+    }
+
+    const savedModules = JSON.parse(raw);
+    if (!Array.isArray(savedModules)) {
+      return;
+    }
+
+    progressChecks.forEach((check) => {
+      const moduleId = check.dataset.module;
+      check.checked = savedModules.includes(moduleId);
+    });
+  } catch (error) {
+    console.warn("Unable to load saved progress.", error);
+  }
+}
+
+function saveProgress() {
+  try {
+    const completedModules = Array.from(progressChecks)
+      .filter((check) => check.checked)
+      .map((check) => check.dataset.module)
+      .filter(Boolean);
+
+    window.localStorage.setItem(progressStorageKey, JSON.stringify(completedModules));
+  } catch (error) {
+    console.warn("Unable to save progress.", error);
+  }
+}
+
 function updateProgress() {
+  if (!progressValue) {
+    return;
+  }
+
   const total = progressChecks.length;
   const completed = Array.from(progressChecks).filter((check) => check.checked).length;
-  const percent = Math.round((completed / total) * 100);
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
   progressValue.textContent = `${percent}%`;
 
   const ring = document.querySelector(".score-ring");
   if (ring) {
-    ring.style.background = `radial-gradient(circle closest-side, rgba(11, 25, 40, 0.96) 68%, transparent 69%), conic-gradient(#ffb347 ${percent * 3.6}deg, rgba(255, 255, 255, 0.16) 0deg)`;
+    ring.style.background =
+      `radial-gradient(circle closest-side, rgba(11, 25, 40, 0.96) 68%, transparent 69%), conic-gradient(#ffb347 ${percent * 3.6}deg, rgba(255, 255, 255, 0.16) 0deg)`;
   }
 }
 
 function renderFlow(trackName) {
   const items = flowTracks[trackName];
-  if (!items || !flowSteps.length || !flowOutput) {
+  if (!items || !flowOutput || flowSteps.length !== items.length) {
     return;
   }
 
@@ -138,23 +130,21 @@ function renderFlow(trackName) {
   });
 
   flowOutput.innerHTML = `
+    <p class="lesson-tag">Key Idea</p>
     <h3>${items[0].title}</h3>
     <p>${items[0].body}</p>
   `;
 }
 
 progressChecks.forEach((check) => {
-  check.addEventListener("change", updateProgress);
+  check.addEventListener("change", () => {
+    saveProgress();
+    updateProgress();
+  });
 });
 
 startReviewButton?.addEventListener("click", () => {
-  document.getElementById("module-7")?.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-flashcards.forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("is-flipped");
-  });
+  document.getElementById("module-5")?.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 flowToggles.forEach((toggle) => {
@@ -175,7 +165,7 @@ flowSteps.forEach((step) => {
     const index = Number(step.dataset.flow);
     const item = items[index];
 
-    if (!item) {
+    if (!item || !flowOutput) {
       return;
     }
 
@@ -183,43 +173,25 @@ flowSteps.forEach((step) => {
     step.classList.add("is-active");
 
     flowOutput.innerHTML = `
+      <p class="lesson-tag">Key Idea</p>
       <h3>${item.title}</h3>
       <p>${item.body}</p>
     `;
   });
 });
 
-quizOptions.forEach((option) => {
-  option.addEventListener("click", () => {
-    if (option.dataset.correct === "true") {
-      quizFeedback.textContent = "Correct. Persistence belongs to the repository layer because that layer manages storage and retrieval.";
-      quizFeedback.className = "quiz-feedback is-correct";
-      return;
-    }
-
-    quizFeedback.textContent = "Not quite. The UI gathers input and the model stores structure, but persistence is the repository's job.";
-    quizFeedback.className = "quiz-feedback is-wrong";
-  });
-});
-
 promptButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const answer = promptAnswers[button.textContent.trim()];
-    promptAnswer.textContent = answer || "Build your answer by stating the principle, naming the evidence, and explaining why the choice helps the system.";
-  });
-});
-
-scenarioButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const response = scenarioResponses[button.textContent.trim()];
-    if (!response) {
+    if (!promptAnswer) {
       return;
     }
 
-    scenarioQuestion.textContent = response.question;
-    scenarioAnswer.textContent = response.answer;
+    promptAnswer.textContent =
+      promptAnswers[button.textContent.trim()] ||
+      "State the principle first, connect it to one class or flow, then explain why the design helps the system.";
   });
 });
 
+loadSavedProgress();
 updateProgress();
 renderFlow(activeTrack);

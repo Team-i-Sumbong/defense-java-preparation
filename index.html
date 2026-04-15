@@ -27,32 +27,30 @@
           <img class="brand-row__logo" src="logo.png" alt="i-Sumbong brand mark">
           <div>
             <p class="eyebrow">Defense Learning Studio</p>
-            <h1>Learn the software principles first, then use i-Sumbong as your proof.</h1>
+            <h1>Start with the software principle, then use i-Sumbong as your proof.</h1>
           </div>
         </div>
 
-        <div class="hero__grid">
+        <div class="hero__grid hero__grid--course">
           <section class="hero-card hero-card--lead">
-            <p class="hero-card__label">Teaching Goal</p>
+            <p class="hero-card__label">What To Do First</p>
             <p class="hero-card__copy">
-              This course is designed to help your team explain architecture, object-oriented design,
-              and system flow with understanding, not memorization. The Java app is the case study,
-              not the whole lesson.
+              Work through the five core defense topics below. Each one uses the same pattern:
+              Key Idea, Project Example, and Defense Line.
             </p>
             <div class="hero-actions">
               <a class="button button--primary" href="#module-1">Start the Course</a>
               <button class="button button--ghost" id="start-review" type="button">Jump to Practice</button>
-              <a class="button button--ghost" href="quiz.html">Open Quiz Bank</a>
             </div>
           </section>
 
-          <section class="hero-card">
-            <p class="hero-card__label">What Students Should Be Able To Do</p>
+          <section class="hero-card hero-card--checklist">
+            <p class="hero-card__label">What You Should Be Able To Explain</p>
             <ul class="plain-list">
-              <li>Explain why software is split into layers and responsibilities</li>
-              <li>Describe what classes, methods, objects, and models represent</li>
-              <li>Trace how login and report submission move through the app</li>
-              <li>Defend design choices using principles, not just filenames</li>
+              <li>Why the system is split into clear layers</li>
+              <li>How classes and methods represent responsibilities</li>
+              <li>How login and report submission move through one flow</li>
+              <li>How to answer critique questions with reasoning</li>
             </ul>
           </section>
 
@@ -61,7 +59,7 @@
             <div class="score-ring" aria-hidden="true">
               <span id="progress-value">0%</span>
             </div>
-            <p class="hero-card__copy">Mark each lesson complete as your team finishes it.</p>
+            <p class="hero-card__copy">Mark a module complete after your team can explain it calmly.</p>
           </section>
         </div>
       </div>
@@ -74,32 +72,19 @@
           <nav class="checklist-nav">
             <a href="#module-1">1. Architecture Mindset</a>
             <a href="#module-2">2. Classes and Models</a>
-            <a href="#module-3">3. Method Responsibility</a>
-            <a href="#module-4">4. Encapsulation</a>
-            <a href="#module-5">5. System Flow</a>
-            <a href="#module-6">6. Design Critique</a>
-            <a href="#module-7">7. Defense Mastery</a>
-            <a href="quiz.html">8. Quiz Bank</a>
+            <a href="#module-3">3. Methods and Encapsulation</a>
+            <a href="#module-4">4. System Flow</a>
+            <a href="#module-5">5. Defense Reasoning</a>
+            <a href="java-review.html">6. Java Review</a>
+            <a href="quiz.html">7. Quiz Bank</a>
           </nav>
-        </div>
-
-        <div class="sidebar__panel">
-          <p class="sidebar__title">i-Sumbong as Evidence</p>
-          <div class="stack-tags">
-            <span>App.java</span>
-            <span>AuthPortalView</span>
-            <span>AuthService</span>
-            <span>ReportService</span>
-            <span>ReportRepository</span>
-            <span>IssueReport</span>
-          </div>
         </div>
 
         <div class="sidebar__panel sidebar__panel--accent">
           <p class="sidebar__title">Professor's Reminder</p>
           <p class="sidebar__copy">
-            During defense, do not start with "This class does this." Start with the principle:
-            responsibility, separation, data modeling, or flow. Then point to the class that shows it.
+            Begin with the principle, connect it to one class or flow, then explain why that choice helps
+            the system.
           </p>
         </div>
       </aside>
@@ -107,33 +92,21 @@
       <main class="main-content">
         <section class="overview-card">
           <div>
-            <p class="eyebrow">Course Lens</p>
-            <h2>Use the Project to Prove the Principle</h2>
+            <p class="eyebrow">Study Pattern</p>
+            <h2>Use One Repeatable Defense Structure</h2>
           </div>
-          <div class="architecture-grid">
+          <div class="architecture-grid architecture-grid--compact">
             <article>
-              <p class="architecture-grid__title">Principle</p>
-              <p>What software idea are we trying to explain?</p>
+              <p class="architecture-grid__title">Key Idea</p>
+              <p>Name the software principle in plain language.</p>
             </article>
             <article>
-              <p class="architecture-grid__title">Reason</p>
-              <p>Why does that idea help maintainability, clarity, or correctness?</p>
+              <p class="architecture-grid__title">Project Example</p>
+              <p>Point to the class or flow that proves the principle in i-Sumbong.</p>
             </article>
             <article>
-              <p class="architecture-grid__title">Evidence</p>
-              <p>Which class in i-Sumbong demonstrates the idea clearly?</p>
-            </article>
-            <article>
-              <p class="architecture-grid__title">Tradeoff</p>
-              <p>What becomes harder if the design is ignored or merged into one place?</p>
-            </article>
-            <article>
-              <p class="architecture-grid__title">Defense Answer</p>
-              <p>How can you explain the choice in one clear, confident sentence?</p>
-            </article>
-            <article>
-              <p class="architecture-grid__title">Practice</p>
-              <p>Can you apply the idea to login, registration, and report submission?</p>
+              <p class="architecture-grid__title">Defense Line</p>
+              <p>Finish with one short reason why the design helps the system.</p>
             </article>
           </div>
         </section>
@@ -142,7 +115,7 @@
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 1</p>
-              <h2>Architecture Mindset: Organize by Responsibility</h2>
+              <h2>Architecture Mindset</h2>
             </div>
             <label class="module-check">
               <input class="progress-check" data-module="1" type="checkbox">
@@ -150,58 +123,49 @@
             </label>
           </div>
 
-          <div class="module__grid">
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Principle</p>
-              <h3>Software becomes easier to explain when each layer has one main job.</h3>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>Good architecture separates the program by responsibility.</h3>
               <p class="plain-explain">
-                Students should first understand that good architecture separates responsibilities.
-                The UI handles interaction, the service layer applies rules, the repository handles storage,
-                and the model represents data.
+                The important point is not the number of files. The important point is that each layer has
+                one main job.
               </p>
-            </article>
-
-            <article class="lesson-card">
-              <p class="lesson-tag">Why It Matters</p>
-              <ul class="plain-list">
-                <li>It prevents one file from doing everything.</li>
-                <li>It makes bugs easier to locate.</li>
-                <li>It allows each part of the program to stay focused.</li>
-                <li>It gives a clean explanation during defense.</li>
-              </ul>
             </article>
 
             <article class="lesson-card lesson-card--case">
-              <p class="lesson-tag">i-Sumbong Case</p>
-              <pre><code>App.java -> AuthPortalView -> AuthService -> Repository -> JSON data</code></pre>
-              <p class="plain-explain">
-                The project already shows layered thinking. <code>App.java</code> starts the app,
-                <code>AuthPortalView</code> handles screen interaction, and <code>AuthService</code>
-                decides whether login or registration is allowed.
-              </p>
+              <p class="lesson-tag">Project Example</p>
+              <ul class="plain-list plain-list--tight">
+                <li><code>AuthPortalView</code> handles interaction</li>
+                <li><code>AuthService</code> applies rules</li>
+                <li><code>ReportRepository</code> handles persistence</li>
+                <li><code>IssueReport</code> represents data</li>
+              </ul>
             </article>
 
-            <article class="lesson-card">
-              <p class="lesson-tag">Defense Answer</p>
+            <article class="lesson-card lesson-card--answer">
+              <p class="lesson-tag">Defense Line</p>
               <p class="defense-answer">
-                We separated the system into layers so each part has a clear responsibility. This improves
-                maintainability and makes the program easier to debug, extend, and explain.
+                We separated responsibilities so each part stays focused, easier to maintain, and easier to
+                explain during defense.
               </p>
             </article>
           </div>
 
-          <div class="memory-callout">
-            <strong>Common weak answer:</strong> "We have UI, service, and repository because that is how the code is written."
-            <br>
-            <strong>Better answer:</strong> "We used layers because each layer solves a different problem: interaction, business rules, and storage."
-          </div>
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Weak answer:</strong> We used layers because that is how Java projects look.</p>
+              <p><strong>Better answer:</strong> We used layers because interaction, rules, storage, and data representation should not compete inside one class.</p>
+            </div>
+          </details>
         </section>
 
         <section class="module" id="module-2">
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 2</p>
-              <h2>Classes and Models: Represent Real Things Clearly</h2>
+              <h2>Classes and Models</h2>
             </div>
             <label class="module-check">
               <input class="progress-check" data-module="2" type="checkbox">
@@ -209,24 +173,23 @@
             </label>
           </div>
 
-          <div class="module__grid module__grid--two-rows">
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Principle</p>
-              <h3>A class is a blueprint, and a model class represents a real entity in the domain.</h3>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>A class should represent one clear role, and a model should represent a real thing in the system.</h3>
               <p class="plain-explain">
-                Students should learn to ask, "What real thing does this class stand for?" If the answer is
-                "a report," "a user," or "a status log," then the class is modeling part of the system domain.
+                Ask this first: what responsibility or entity does this class stand for?
               </p>
             </article>
 
             <article class="lesson-card lesson-card--case">
-              <p class="lesson-tag">i-Sumbong Case</p>
+              <p class="lesson-tag">Project Example</p>
               <div class="table-shell">
                 <table class="course-table">
                   <thead>
                     <tr>
                       <th scope="col">Class</th>
-                      <th scope="col">Represents</th>
+                      <th scope="col">What It Represents</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -240,52 +203,36 @@
                     </tr>
                     <tr>
                       <td><code>StatusLog</code></td>
-                      <td>A record of status changes</td>
+                      <td>A record of report updates</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </article>
 
-            <article class="lesson-card lesson-card--flashcards">
-              <div class="flashcard" data-flashcard>
-                <div class="flashcard__front">
-                  <p class="mini-title">Concept Check</p>
-                  <h3>What is the difference between a class and an object?</h3>
-                  <p>Click to reveal</p>
-                </div>
-                <div class="flashcard__back">
-                  <p>A class is the design. An object is one actual instance created from that design.</p>
-                </div>
-              </div>
-
-              <div class="flashcard" data-flashcard>
-                <div class="flashcard__front">
-                  <p class="mini-title">Concept Check</p>
-                  <h3>Why is <code>IssueReport</code> a model?</h3>
-                  <p>Click to reveal</p>
-                </div>
-                <div class="flashcard__back">
-                  <p>Because it stores the data of a real report, such as title, category, location, and status.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="lesson-card">
-              <p class="lesson-tag">Defense Answer</p>
+            <article class="lesson-card lesson-card--answer">
+              <p class="lesson-tag">Defense Line</p>
               <p class="defense-answer">
-                We used model classes to represent real system entities in a structured way. This keeps the data
-                consistent and allows other layers to work with clear objects instead of random variables.
+                We used model classes to keep important data in structured objects, which makes the system
+                more consistent and easier for other layers to use correctly.
               </p>
             </article>
           </div>
+
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Class vs object:</strong> A class is the blueprint. An object is one actual instance created from that blueprint.</p>
+              <p><strong>Fast example:</strong> <code>IssueReport</code> is the class, while one submitted complaint is an object.</p>
+            </div>
+          </details>
         </section>
 
         <section class="module" id="module-3">
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 3</p>
-              <h2>Method Responsibility: One Method Should Have a Clear Purpose</h2>
+              <h2>Methods and Encapsulation</h2>
             </div>
             <label class="module-check">
               <input class="progress-check" data-module="3" type="checkbox">
@@ -293,88 +240,50 @@
             </label>
           </div>
 
-          <div class="module__grid">
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Principle</p>
-              <h3>Read a method by asking what it receives, what it decides, and what it returns.</h3>
-              <ol class="number-list">
-                <li>Read the method name.</li>
-                <li>Read the parameters.</li>
-                <li>Read the return type.</li>
-                <li>Translate the method into plain English.</li>
-              </ol>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>A strong method has a clear job, and encapsulation keeps object data controlled.</h3>
+              <p class="plain-explain">
+                Read methods by checking what they receive, what they decide, and what they return.
+              </p>
             </article>
 
             <article class="lesson-card lesson-card--case">
-              <p class="lesson-tag">i-Sumbong Case</p>
+              <p class="lesson-tag">Project Example</p>
               <pre><code>public boolean registerResident(User user)</code></pre>
               <p class="plain-explain">
-                In plain English: receive a user object, validate it, assign defaults and IDs, save it,
-                and report whether registration succeeded.
+                This method receives a user, validates the data, prepares default values, saves the record,
+                and returns whether the action succeeded.
+              </p>
+            </article>
+
+            <article class="lesson-card lesson-card--answer">
+              <p class="lesson-tag">Defense Line</p>
+              <p class="defense-answer">
+                We kept behavior inside focused methods and controlled data through getters and setters so
+                the code stays organized and ready for future validation rules.
               </p>
             </article>
           </div>
 
-          <div class="analysis-panel">
-            <div>
-              <p class="mini-title">Strong design signal</p>
-              <p><code>AuthService</code> contains rule-based methods like login and registration, which means business logic is not trapped in the UI.</p>
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Why encapsulation matters:</strong> It prevents object state from being changed carelessly across the whole program.</p>
+              <p><strong>Simple phrasing:</strong> Access happens through controlled methods instead of direct field changes everywhere.</p>
             </div>
-            <div>
-              <p class="mini-title">Professor's critique</p>
-              <p><code>AuthPortalView</code> is effective, but long. This is a good discussion point about when UI classes become harder to maintain.</p>
-            </div>
-          </div>
+          </details>
         </section>
 
         <section class="module" id="module-4">
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 4</p>
-              <h2>Encapsulation: Control Access to Data</h2>
+              <h2>System Flow</h2>
             </div>
             <label class="module-check">
               <input class="progress-check" data-module="4" type="checkbox">
-              <span>Mark complete</span>
-            </label>
-          </div>
-
-          <div class="module__grid">
-            <article class="lesson-card">
-              <p class="lesson-tag">Principle</p>
-              <pre><code>public String getReportId() {
-    return reportId;
-}
-
-public void setReportId(String reportId) {
-    this.reportId = reportId;
-}</code></pre>
-            </article>
-
-            <article class="lesson-card">
-              <p class="lesson-tag">Why It Matters</p>
-              <ul class="plain-list">
-                <li>Encapsulation keeps object data organized.</li>
-                <li>It avoids uncontrolled direct changes from everywhere.</li>
-                <li>It makes future validation easier to add.</li>
-                <li>It supports cleaner object-oriented design.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="memory-callout">
-            <strong>Defense Answer:</strong> We used getters and setters to support encapsulation, meaning object state is accessed through controlled methods instead of being modified directly throughout the whole system.
-          </div>
-        </section>
-
-        <section class="module" id="module-5">
-          <div class="module__header">
-            <div>
-              <p class="eyebrow">Module 5</p>
-              <h2>System Flow: Trace Input, Processing, and Output</h2>
-            </div>
-            <label class="module-check">
-              <input class="progress-check" data-module="5" type="checkbox">
               <span>Mark complete</span>
             </label>
           </div>
@@ -385,99 +294,35 @@ public void setReportId(String reportId) {
           </div>
 
           <div class="flow-map" id="flow-map">
-            <button class="flow-step is-active" data-flow="0" type="button">1. User opens app</button>
-            <button class="flow-step" data-flow="1" type="button">2. UI collects input</button>
-            <button class="flow-step" data-flow="2" type="button">3. Service applies rules</button>
-            <button class="flow-step" data-flow="3" type="button">4. Repository accesses data</button>
-            <button class="flow-step" data-flow="4" type="button">5. System decides result</button>
-            <button class="flow-step" data-flow="5" type="button">6. UI shows outcome</button>
+            <button class="flow-step is-active" data-flow="0" type="button">1. UI receives input</button>
+            <button class="flow-step" data-flow="1" type="button">2. Service checks rules</button>
+            <button class="flow-step" data-flow="2" type="button">3. Repository reads or writes data</button>
+            <button class="flow-step" data-flow="3" type="button">4. UI shows result</button>
           </div>
 
           <article class="lesson-card flow-output" id="flow-output">
-            <h3>1. User opens app</h3>
-            <p>The system starts in <code>App.java</code>, creates the main stage, and loads the first visible view.</p>
+            <p class="lesson-tag">Key Idea</p>
+            <h3>1. UI receives input</h3>
+            <p>The user enters information into the screen, and the UI passes that input to the correct service.</p>
           </article>
 
-          <div class="io-grid">
-            <article class="lesson-card">
-              <p class="lesson-tag">Input</p>
-              <p>Email, password, account type, report details, category, and location.</p>
-            </article>
-            <article class="lesson-card">
-              <p class="lesson-tag">Process</p>
-              <p>Validation, ID generation, verification checks, status changes, and persistence.</p>
-            </article>
-            <article class="lesson-card">
-              <p class="lesson-tag">Output</p>
-              <p>Feedback messages, dashboard access, saved records, and status updates.</p>
-            </article>
-          </div>
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Login pattern:</strong> UI input -> service validation -> repository lookup -> result in UI.</p>
+              <p><strong>Report pattern:</strong> UI input -> service validation and defaults -> repository save -> success feedback.</p>
+            </div>
+          </details>
         </section>
 
-        <section class="module" id="module-6">
+        <section class="module" id="module-5">
           <div class="module__header">
             <div>
-              <p class="eyebrow">Module 6</p>
-              <h2>Design Critique: Read the Code Like an Engineer</h2>
+              <p class="eyebrow">Module 5</p>
+              <h2>Defense Reasoning</h2>
             </div>
             <label class="module-check">
-              <input class="progress-check" data-module="6" type="checkbox">
-              <span>Mark complete</span>
-            </label>
-          </div>
-
-          <div class="module__grid">
-            <article class="lesson-card">
-              <p class="lesson-tag">Questions To Ask</p>
-              <ul class="plain-list">
-                <li>Does this class have a focused responsibility?</li>
-                <li>Is business logic mixed too much with UI handling?</li>
-                <li>Does the method name match what it really does?</li>
-                <li>Is data storage separated from interaction logic?</li>
-              </ul>
-            </article>
-
-            <article class="lesson-card">
-              <p class="lesson-tag">Real Critique of the Project</p>
-              <ul class="plain-list">
-                <li><code>AuthService</code> is a strong example of keeping rules outside the UI.</li>
-                <li><code>ReportRepository</code> is easy to explain because it focuses on persistence.</li>
-                <li><code>AuthPortalView</code> handles many screen concerns, which makes it a good example of a class that may later need refactoring.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="quiz-card" id="quiz">
-            <p class="eyebrow">Responsibility Check</p>
-            <h3>Which layer should be responsible for saving reports to JSON?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-correct="false" type="button">UI Layer</button>
-              <button class="quiz-option" data-correct="true" type="button">Repository Layer</button>
-              <button class="quiz-option" data-correct="false" type="button">Model Layer</button>
-            </div>
-            <p class="quiz-feedback" id="quiz-feedback">Choose the layer with the correct responsibility.</p>
-          </div>
-
-          <div class="decision-lab">
-            <p class="mini-title">Scenario Lab</p>
-            <p id="scenario-question">A panelist asks: why not put login validation directly inside the JavaFX view?</p>
-            <div class="prompt-answer" id="scenario-answer">Click a scenario below to reveal a stronger principle-based answer.</div>
-            <div class="scenario-actions">
-              <button class="prompt-button scenario-button" type="button">Why not put login validation in the UI?</button>
-              <button class="prompt-button scenario-button" type="button">Why is ReportRepository not part of the model?</button>
-              <button class="prompt-button scenario-button" type="button">Why is AuthPortalView a maintainability discussion point?</button>
-            </div>
-          </div>
-        </section>
-
-        <section class="module" id="module-7">
-          <div class="module__header">
-            <div>
-              <p class="eyebrow">Module 7</p>
-              <h2>Defense Mastery: Answer with Principle, Evidence, and Reason</h2>
-            </div>
-            <label class="module-check">
-              <input class="progress-check" data-module="7" type="checkbox">
+              <input class="progress-check" data-module="5" type="checkbox">
               <span>Mark complete</span>
             </label>
           </div>
@@ -487,43 +332,42 @@ public void setReportId(String reportId) {
               <p class="lesson-tag">Answer Formula</p>
               <ol class="number-list">
                 <li>State the principle.</li>
-                <li>Name the class that demonstrates it.</li>
+                <li>Give one project example.</li>
                 <li>Explain why that choice helps the system.</li>
               </ol>
             </article>
 
             <article class="lesson-card">
-              <p class="lesson-tag">1-Minute Sample</p>
-              <p class="defense-answer">
-                i-Sumbong is a Java-based barangay reporting system that follows separation of concerns. The app starts in
-                <code>App.java</code>, the UI layer gathers input, service classes apply rules such as login and verification,
-                repository classes handle JSON persistence, and model classes represent entities like users and reports.
-                This design keeps the system easier to maintain and explain.
-              </p>
+              <p class="lesson-tag">Panel Question Practice</p>
+              <div class="prompt-stack">
+                <button class="prompt-button" type="button">Why did you separate UI and service classes?</button>
+                <button class="prompt-button" type="button">Why use repositories instead of putting all logic in the UI?</button>
+                <button class="prompt-button" type="button">How does the login flow move through the system?</button>
+              </div>
+              <div class="prompt-answer" id="prompt-answer">
+                Choose a question to reveal a short defense-ready answer.
+              </div>
             </article>
           </div>
 
-          <article class="lesson-card prompt-stack">
-            <h3>Panel Question Practice</h3>
-            <button class="prompt-button" type="button">Why did you separate UI and service classes?</button>
-            <button class="prompt-button" type="button">What is the purpose of getters and setters in your model?</button>
-            <button class="prompt-button" type="button">How does the login flow move through the system?</button>
-            <button class="prompt-button" type="button">Why use repositories instead of putting all logic in the UI?</button>
-            <button class="prompt-button" type="button">What design principle does IssueReport demonstrate?</button>
-            <div class="prompt-answer" id="prompt-answer">
-              Choose a panel question to reveal a defense-ready model answer.
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Critique example:</strong> <code>AuthPortalView</code> works, but its size makes it a good maintainability discussion point.</p>
+              <p><strong>Good tone in defense:</strong> Be balanced. Mention what works now and what could improve later.</p>
             </div>
-          </article>
+          </details>
+        </section>
 
-          <article class="lesson-card">
-            <p class="lesson-tag">Practice Mode</p>
-            <h3>Ready for a full quiz?</h3>
-            <p class="plain-explain">
-              Use the quiz bank to practice by difficulty. Each level contains 15 multiple-choice questions
-              that check understanding of architecture, OOP, flow tracing, and defense reasoning.
-            </p>
-            <a class="button button--primary" href="quiz.html">Launch Quiz Bank</a>
-          </article>
+        <section class="overview-card overview-card--next">
+          <div>
+            <p class="eyebrow">Next Step</p>
+            <h2>Move to targeted review or a short quiz</h2>
+          </div>
+          <div class="next-actions">
+            <a class="button button--primary" href="java-review.html">Open Java Review</a>
+            <a class="button button--secondary" href="quiz.html">Take the 7-question Quiz</a>
+          </div>
         </section>
       </main>
     </div>

@@ -1,20 +1,16 @@
 :root {
-  --bg: #f7f2ea;
-  --surface: rgba(255, 251, 246, 0.88);
-  --surface-strong: #fffdf9;
+  --surface: rgba(255, 251, 246, 0.9);
   --text: #182330;
   --muted: #5d6776;
   --line: #ddd2c2;
   --primary: #0f4c5c;
   --primary-deep: #0a2b33;
   --accent: #ffb347;
-  --accent-soft: rgba(255, 179, 71, 0.18);
   --success: #237a57;
   --danger: #b14b43;
   --shadow: 0 22px 55px rgba(40, 30, 17, 0.12);
   --radius-xl: 30px;
   --radius-lg: 22px;
-  --radius-md: 16px;
 }
 
 *,
@@ -51,13 +47,8 @@ img {
 }
 
 button,
-a,
-input {
+a {
   font: inherit;
-}
-
-code {
-  font-family: "IBM Plex Mono", Consolas, monospace;
 }
 
 .page-shell {
@@ -82,9 +73,9 @@ code {
 
 .hero__content {
   position: relative;
-  max-width: 1240px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 42px 24px 56px;
+  padding: 42px 24px 52px;
 }
 
 .top-nav {
@@ -118,9 +109,11 @@ code {
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
-.top-nav__link:hover {
+.top-nav__link:hover,
+.button:hover,
+.difficulty-button:hover,
+.option-button:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .top-nav__link.is-active {
@@ -145,7 +138,7 @@ code {
 }
 
 .eyebrow {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   color: #ffd292;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -154,16 +147,19 @@ code {
 }
 
 .hero h1 {
-  max-width: 780px;
-  font-size: clamp(2.2rem, 4vw, 4.3rem);
-  line-height: 1.03;
+  max-width: 760px;
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  line-height: 1.04;
 }
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.45fr 1fr 0.82fr;
   gap: 18px;
-  margin-top: 34px;
+  margin-top: 32px;
+}
+
+.hero__grid--quiz {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr);
 }
 
 .hero-card,
@@ -187,12 +183,6 @@ code {
   margin-top: 16px;
 }
 
-.hero-card--score {
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-
 .hero-card__label,
 .sidebar__title,
 .summary-card__label {
@@ -200,14 +190,14 @@ code {
 }
 
 .hero-card__copy {
-  color: rgba(255, 250, 244, 0.88);
+  color: rgba(255, 250, 244, 0.9);
   line-height: 1.65;
 }
 
 .hero-actions {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .button {
@@ -222,12 +212,6 @@ code {
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
-.button:hover,
-.difficulty-button:hover,
-.option-button:hover {
-  transform: translateY(-2px);
-}
-
 .button--primary {
   background: var(--accent);
   color: var(--primary-deep);
@@ -240,21 +224,15 @@ code {
   color: #fffdf8;
 }
 
-.button--compact {
-  padding: 10px 14px;
+.button--secondary {
+  background: #fff8ef;
+  border-color: var(--line);
+  color: var(--primary-deep);
+  font-weight: 700;
 }
 
-.score-ring {
-  display: grid;
-  place-items: center;
-  width: 132px;
-  height: 132px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle closest-side, rgba(11, 25, 40, 0.96) 68%, transparent 69%),
-    conic-gradient(var(--accent) 0deg, rgba(255, 255, 255, 0.18) 0deg);
-  font-size: 2rem;
-  font-weight: 800;
+.button--compact {
+  padding: 10px 14px;
 }
 
 .plain-list {
@@ -265,10 +243,10 @@ code {
 
 .content-shell {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: 22px;
-  max-width: 1240px;
-  margin: -30px auto 0;
+  max-width: 1180px;
+  margin: -24px auto 0;
   padding: 0 24px 56px;
 }
 
@@ -276,15 +254,11 @@ code {
   position: sticky;
   top: 18px;
   align-self: start;
-  max-height: calc(100vh - 36px);
-  overflow-y: auto;
-  padding-right: 6px;
-  scrollbar-gutter: stable;
 }
 
 .sidebar__panel {
   padding: 20px;
-  background: rgba(255, 251, 246, 0.85);
+  background: rgba(255, 251, 246, 0.86);
   backdrop-filter: blur(10px);
 }
 
@@ -297,7 +271,7 @@ code {
 }
 
 .sidebar__panel--accent {
-  background: linear-gradient(160deg, rgba(255, 179, 71, 0.2), rgba(255, 251, 246, 0.9));
+  background: linear-gradient(160deg, rgba(255, 179, 71, 0.2), rgba(255, 251, 246, 0.92));
 }
 
 .sidebar__copy {
@@ -328,22 +302,6 @@ code {
   border-color: rgba(15, 76, 92, 0.35);
 }
 
-.stack-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.stack-tags span {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--primary-deep);
-  font-weight: 700;
-  font-size: 0.9rem;
-  overflow-wrap: anywhere;
-}
-
 .quiz-layout {
   display: grid;
   gap: 22px;
@@ -357,15 +315,12 @@ code {
 
 .summary-card {
   padding: 18px 20px;
-  background: rgba(255, 251, 246, 0.84);
+  background: var(--surface);
   backdrop-filter: blur(12px);
 }
 
-.summary-card > * + * {
-  margin-top: 8px;
-}
-
 .summary-card__value {
+  margin-top: 8px;
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary-deep);
@@ -374,7 +329,7 @@ code {
 .quiz-panel,
 .result-panel {
   padding: 24px;
-  background: rgba(255, 251, 246, 0.84);
+  background: var(--surface);
   backdrop-filter: blur(12px);
 }
 
@@ -390,8 +345,14 @@ code {
   gap: 18px;
 }
 
+.quiz-subtitle,
+.result-copy {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .progress-bar {
-  height: 14px;
+  height: 12px;
   border-radius: 999px;
   background: rgba(15, 76, 92, 0.08);
   overflow: hidden;
@@ -411,7 +372,7 @@ code {
 }
 
 .question-card {
-  padding: 22px;
+  padding: 20px;
   background: linear-gradient(180deg, #fffdf9, #fbf4e9);
 }
 
@@ -453,8 +414,8 @@ code {
 }
 
 .question-text {
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 1.03rem;
+  line-height: 1.6;
 }
 
 .option-list {
@@ -522,13 +483,8 @@ code {
   color: var(--primary-deep);
 }
 
-.result-copy {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
 @media (max-width: 1080px) {
-  .hero__grid,
+  .hero__grid--quiz,
   .content-shell,
   .summary-strip {
     grid-template-columns: 1fr;
@@ -536,9 +492,6 @@ code {
 
   .sidebar {
     position: static;
-    max-height: none;
-    overflow: visible;
-    padding-right: 0;
   }
 }
 
@@ -549,24 +502,13 @@ code {
     padding-right: 16px;
   }
 
-  .brand-row {
-    align-items: flex-start;
-  }
-
   .top-nav,
+  .brand-row,
   .hero-actions,
-  .question-meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+  .question-meta,
   .quiz-panel__header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .quiz-actions {
-    justify-content: stretch;
   }
 
   .quiz-actions .button {

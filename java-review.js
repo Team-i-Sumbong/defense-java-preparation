@@ -1,58 +1,18 @@
-const quoteBox = document.getElementById("quote-box");
-const quoteAuthor = document.getElementById("quote-author");
-const nextQuoteButton = document.getElementById("next-quote");
 const topicButtons = document.querySelectorAll(".topic-button");
 const topicOutput = document.getElementById("topic-output");
 
-const quotes = [
-  {
-    text: "First, solve the problem. Then, write the code.",
-    author: "John Johnson"
-  },
-  {
-    text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-    author: "Martin Fowler"
-  },
-  {
-    text: "Experience is the name everyone gives to their mistakes.",
-    author: "Oscar Wilde"
-  },
-  {
-    text: "Talk is cheap. Show me the code.",
-    author: "Linus Torvalds"
-  }
-];
-
 const topics = {
-  abstraction: {
-    tag: "Abstraction",
-    title: "Abstraction means focusing on the essential role of a component without exposing every low-level detail.",
-    body: "In defense, abstraction helps you explain what a class is for before discussing its implementation details. For example, you can describe ReportRepository as the component responsible for persistence before explaining individual methods."
-  },
   encapsulation: {
     tag: "Encapsulation",
-    title: "Encapsulation means controlling access to object state through methods instead of exposing everything directly.",
-    body: "This is why getters and setters matter in Java. They keep objects organized and allow rules to be added at controlled access points when needed."
+    title: "Encapsulation means object data is accessed through controlled methods instead of direct public access.",
+    body: "This keeps state more organized and makes future validation easier to add at the access points. In i-Sumbong, getters and setters are the clearest example."
   },
   inheritance: {
     tag: "Inheritance",
-    title: "Inheritance allows one class to reuse or extend behavior from another class.",
-    body: "A clear example in JavaFX is how App extends Application. This shows how Java supports reusing framework behavior while allowing project-specific logic."
-  },
-  polymorphism: {
-    tag: "Polymorphism",
-    title: "Polymorphism means one interface or parent type can support different concrete behaviors.",
-    body: "Even when you do not emphasize it heavily in defense, understanding polymorphism helps explain why Java designs can stay flexible and extensible."
+    title: "Inheritance allows one class to reuse behavior from a parent class when that relationship makes sense.",
+    body: "A simple defense example is App extending JavaFX Application. This shows reuse of framework behavior without needing to re-create the whole startup structure."
   }
 };
-
-let quoteIndex = 0;
-
-function renderQuote() {
-  const quote = quotes[quoteIndex];
-  quoteBox.textContent = `"${quote.text}"`;
-  quoteAuthor.textContent = quote.author;
-}
 
 function renderTopic(topicKey) {
   const topic = topics[topicKey];
@@ -67,11 +27,6 @@ function renderTopic(topicKey) {
   `;
 }
 
-nextQuoteButton?.addEventListener("click", () => {
-  quoteIndex = (quoteIndex + 1) % quotes.length;
-  renderQuote();
-});
-
 topicButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const topicKey = button.dataset.topic;
@@ -84,5 +39,4 @@ topicButtons.forEach((button) => {
   });
 });
 
-renderQuote();
-renderTopic("abstraction");
+renderTopic("encapsulation");

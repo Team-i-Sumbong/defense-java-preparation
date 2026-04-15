@@ -27,40 +27,30 @@
           <img class="brand-row__logo" src="logo.png" alt="i-Sumbong brand mark">
           <div>
             <p class="eyebrow">Java Review</p>
-            <h1>Refresh the language fundamentals before defending the system design.</h1>
+            <h1>Review only the Java ideas that directly support your system defense.</h1>
           </div>
         </div>
 
-        <div class="hero__grid">
+        <div class="hero__grid hero__grid--review">
           <section class="hero-card hero-card--lead">
             <p class="hero-card__label">Review Goal</p>
             <p class="hero-card__copy">
-              This page revisits Java language fundamentals in plain academic language so your team can
-              explain the code with confidence. It focuses on concepts, not memorized syntax alone.
+              This page keeps the Java review focused on the concepts your panel is most likely to ask about:
+              data types, control flow, classes, methods, and encapsulation.
             </p>
             <div class="hero-actions">
               <a class="button button--primary" href="#review-modules">Start Review</a>
-              <a class="button button--ghost" href="quiz.html">Go to Quiz Bank</a>
+              <a class="button button--ghost" href="quiz.html">Open Quiz Bank</a>
             </div>
           </section>
 
           <section class="hero-card">
-            <p class="hero-card__label">What To Strengthen</p>
+            <p class="hero-card__label">Best Use Of This Page</p>
             <ul class="plain-list">
-              <li>Variables, data types, conditionals, and loops</li>
-              <li>Classes, objects, methods, constructors, and encapsulation</li>
-              <li>Inheritance, polymorphism, and abstraction</li>
-              <li>How Java ideas appear in the i-Sumbong app</li>
+              <li>Read the principle first</li>
+              <li>Connect it to one i-Sumbong example</li>
+              <li>Practice saying the defense line aloud</li>
             </ul>
-          </section>
-
-          <section class="hero-card hero-card--quote">
-            <p class="hero-card__label">Motivational Quote</p>
-            <blockquote class="quote-box" id="quote-box">
-              "First, solve the problem. Then, write the code."
-            </blockquote>
-            <p class="hero-card__copy" id="quote-author">John Johnson</p>
-            <button class="button button--ghost button--compact" id="next-quote" type="button">Next Quote</button>
           </section>
         </div>
       </div>
@@ -71,30 +61,19 @@
         <div class="sidebar__panel">
           <p class="sidebar__title">Review Map</p>
           <nav class="checklist-nav">
-            <a href="#module-1">1. Java Foundations</a>
+            <a href="#module-1">1. Variables and Data Types</a>
             <a href="#module-2">2. Control Flow</a>
             <a href="#module-3">3. Classes and Objects</a>
-            <a href="#module-4">4. OOP Principles</a>
-            <a href="#module-5">5. Methods and Encapsulation</a>
-            <a href="#module-6">6. Java in i-Sumbong</a>
+            <a href="#module-4">4. Methods and Parameters</a>
+            <a href="#module-5">5. Encapsulation and Inheritance</a>
           </nav>
-        </div>
-
-        <div class="sidebar__panel">
-          <p class="sidebar__title">Mindset</p>
-          <div class="stack-tags">
-            <span>Understand</span>
-            <span>Explain</span>
-            <span>Trace</span>
-            <span>Defend</span>
-          </div>
         </div>
 
         <div class="sidebar__panel sidebar__panel--accent">
           <p class="sidebar__title">Study Reminder</p>
           <p class="sidebar__copy">
-            You do not need to sound robotic. Clear understanding, calm explanation, and correct principles
-            are stronger than memorized jargon.
+            You do not need to explain every Java feature. Explain the features that clearly appear in your
+            project and affect the design.
           </p>
         </div>
       </aside>
@@ -102,21 +81,21 @@
       <main class="main-content">
         <section class="overview-card">
           <div>
-            <p class="eyebrow">Review Lens</p>
-            <h2>Study the Language, Then Connect It to the Project</h2>
+            <p class="eyebrow">Review Pattern</p>
+            <h2>Keep Every Topic Short and Teachable</h2>
           </div>
-          <div class="architecture-grid">
+          <div class="architecture-grid architecture-grid--compact">
             <article>
-              <p class="architecture-grid__title">Concept</p>
-              <p>What Java feature are we reviewing?</p>
+              <p class="architecture-grid__title">Key Idea</p>
+              <p>What Java concept are you explaining?</p>
             </article>
             <article>
-              <p class="architecture-grid__title">Meaning</p>
-              <p>What does it do in a program?</p>
+              <p class="architecture-grid__title">Project Example</p>
+              <p>Where does that idea appear in i-Sumbong?</p>
             </article>
             <article>
-              <p class="architecture-grid__title">Project Evidence</p>
-              <p>Where can we point to that feature in i-Sumbong?</p>
+              <p class="architecture-grid__title">Defense Line</p>
+              <p>How do you explain it in one clear sentence?</p>
             </article>
           </div>
         </section>
@@ -125,25 +104,33 @@
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 1</p>
-              <h2>Java Foundations: Variables, Types, and Syntax</h2>
+              <h2>Variables and Data Types</h2>
             </div>
           </div>
-          <div class="module__grid">
+
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Concept</p>
-              <h3>Variables store values that the program needs while it runs.</h3>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>Variables store values, and data types tell Java what kind of value each variable holds.</h3>
               <p class="plain-explain">
-                Java uses data types such as <code>int</code>, <code>double</code>, <code>boolean</code>, and
-                <code>String</code> so the compiler knows what kind of value is being stored.
+                This matters because the compiler and the programmer both need to know what kind of data is expected.
               </p>
             </article>
-            <article class="lesson-card lesson-card--case">
-              <p class="lesson-tag">Why It Matters</p>
-              <ul class="plain-list">
-                <li>Correct types reduce logic mistakes.</li>
-                <li>They make method contracts easier to understand.</li>
-                <li>They improve readability during code review and defense.</li>
-              </ul>
+
+            <article class="lesson-card">
+              <p class="lesson-tag">Project Example</p>
+              <p class="plain-explain">
+                In i-Sumbong, fields such as report titles use <code>String</code>, flags can use
+                <code>boolean</code>, and counters or identifiers may use numeric types.
+              </p>
+            </article>
+
+            <article class="lesson-card">
+              <p class="lesson-tag">Defense Line</p>
+              <p class="defense-answer">
+                We use variables and data types to store information in a controlled form, which helps the
+                program process the correct kind of data consistently.
+              </p>
             </article>
           </div>
         </section>
@@ -152,28 +139,34 @@
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 2</p>
-              <h2>Control Flow: Conditionals and Loops</h2>
+              <h2>Control Flow</h2>
             </div>
           </div>
-          <div class="module__grid">
+
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Concept</p>
-              <h3>Conditionals decide which path the program should follow.</h3>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>Control flow lets the program choose what happens next based on conditions.</h3>
               <p class="plain-explain">
-                Statements like <code>if</code>, <code>else</code>, and <code>switch</code> allow Java programs
-                to respond to different inputs and states.
+                The most common defense example is the use of <code>if</code> statements in validation and login checks.
               </p>
             </article>
+
             <article class="lesson-card">
-              <p class="lesson-tag">Connection</p>
+              <p class="lesson-tag">Project Example</p>
               <p class="plain-explain">
-                In login logic, the program checks whether an account exists, whether the password matches,
-                and whether the account is verified before allowing access.
+                During login, the system checks whether the account exists, whether the password matches,
+                and whether the user is allowed to continue.
               </p>
             </article>
-          </div>
-          <div class="memory-callout">
-            <strong>Defense line:</strong> Java control flow lets the system make decisions based on rules, such as whether a user is verified or whether required report fields are complete.
+
+            <article class="lesson-card">
+              <p class="lesson-tag">Defense Line</p>
+              <p class="defense-answer">
+                Java control flow helps the system make rule-based decisions, such as whether a login should
+                succeed or whether report input is valid.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -181,20 +174,21 @@
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 3</p>
-              <h2>Classes and Objects: The Core of Java OOP</h2>
+              <h2>Classes and Objects</h2>
             </div>
           </div>
-          <div class="module__grid">
+
+          <div class="teaching-grid">
             <article class="lesson-card">
-              <p class="lesson-tag">Concept</p>
-              <h3>A class defines structure and behavior; an object is one usable instance.</h3>
+              <p class="lesson-tag">Key Idea</p>
+              <h3>A class is a blueprint, while an object is one actual instance created from it.</h3>
               <p class="plain-explain">
-                This is one of the most important review areas because i-Sumbong is built from classes that
-                represent users, reports, services, and repositories.
+                This idea is central because the project is built from model, service, repository, and view classes.
               </p>
             </article>
+
             <article class="lesson-card lesson-card--case">
-              <p class="lesson-tag">Project Evidence</p>
+              <p class="lesson-tag">Project Example</p>
               <div class="table-shell">
                 <table class="course-table">
                   <thead>
@@ -206,19 +200,27 @@
                   <tbody>
                     <tr>
                       <td><code>User</code></td>
-                      <td>Represents a system user</td>
+                      <td>Represents a person in the system</td>
                     </tr>
                     <tr>
                       <td><code>IssueReport</code></td>
-                      <td>Represents a submitted concern</td>
+                      <td>Represents one submitted concern</td>
                     </tr>
                     <tr>
                       <td><code>AuthService</code></td>
-                      <td>Represents business-rule behavior for accounts</td>
+                      <td>Performs account-related behavior</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+            </article>
+
+            <article class="lesson-card">
+              <p class="lesson-tag">Defense Line</p>
+              <p class="defense-answer">
+                We use classes to organize data and behavior into meaningful components, and objects let the
+                system work with real instances of those components.
+              </p>
             </article>
           </div>
         </section>
@@ -227,92 +229,65 @@
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 4</p>
-              <h2>OOP Principles: Abstraction, Inheritance, Polymorphism, Encapsulation</h2>
+              <h2>Methods and Parameters</h2>
             </div>
           </div>
-          <div class="topic-switcher" role="tablist" aria-label="OOP principle tabs">
-            <button class="topic-button is-selected" data-topic="abstraction" type="button">Abstraction</button>
-            <button class="topic-button" data-topic="encapsulation" type="button">Encapsulation</button>
-            <button class="topic-button" data-topic="inheritance" type="button">Inheritance</button>
-            <button class="topic-button" data-topic="polymorphism" type="button">Polymorphism</button>
+
+          <div class="teaching-grid">
+            <article class="lesson-card">
+              <p class="lesson-tag">Key Idea</p>
+              <h3>Methods define behavior, and parameters show what input that behavior needs.</h3>
+              <p class="plain-explain">
+                Good method explanations start with purpose, then mention input and output.
+              </p>
+            </article>
+
+            <article class="lesson-card lesson-card--case">
+              <p class="lesson-tag">Project Example</p>
+              <pre><code>public boolean registerResident(User user)</code></pre>
+              <p class="plain-explain">
+                This method receives a user object, performs checks, saves the data, and returns whether the action succeeded.
+              </p>
+            </article>
+
+            <article class="lesson-card">
+              <p class="lesson-tag">Defense Line</p>
+              <p class="defense-answer">
+                Methods keep behavior organized, while parameters make the required input explicit so each
+                operation is easier to read and explain.
+              </p>
+            </article>
           </div>
-          <article class="lesson-card topic-output" id="topic-output">
-            <p class="lesson-tag">Abstraction</p>
-            <h3>Abstraction means focusing on the essential role of a component without exposing every low-level detail.</h3>
-            <p class="plain-explain">
-              In defense, abstraction helps you explain what a class is for before discussing its implementation details.
-            </p>
-          </article>
         </section>
 
         <section class="module" id="module-5">
           <div class="module__header">
             <div>
               <p class="eyebrow">Module 5</p>
-              <h2>Methods, Constructors, and Encapsulation</h2>
+              <h2>Encapsulation and One Inheritance Example</h2>
             </div>
           </div>
-          <div class="module__grid">
-            <article class="lesson-card">
-              <p class="lesson-tag">Methods</p>
-              <p class="plain-explain">
-                A method defines behavior. It may receive parameters, process data, and return a result.
-                Good methods have clear responsibilities and names that match their purpose.
-              </p>
-            </article>
-            <article class="lesson-card">
-              <p class="lesson-tag">Constructors</p>
-              <p class="plain-explain">
-                Constructors help initialize objects when they are created. They are especially useful when an object
-                should start with meaningful values instead of empty state.
-              </p>
-            </article>
-          </div>
-          <div class="memory-callout">
-            <strong>Defense line:</strong> In Java, methods define behavior, while constructors define how an object begins its life with valid starting data.
-          </div>
-        </section>
 
-        <section class="module" id="module-6">
-          <div class="module__header">
-            <div>
-              <p class="eyebrow">Module 6</p>
-              <h2>Java in i-Sumbong: Read the Language Inside the Project</h2>
-            </div>
+          <div class="topic-switcher" role="tablist" aria-label="Java concept tabs">
+            <button class="topic-button is-selected" data-topic="encapsulation" type="button">Encapsulation</button>
+            <button class="topic-button" data-topic="inheritance" type="button">Inheritance</button>
           </div>
-          <div class="analysis-panel">
-            <div>
-              <p class="mini-title">Startup</p>
-              <p><code>App.java</code> shows inheritance from JavaFX's <code>Application</code> and the use of methods like <code>start</code> and <code>main</code>.</p>
-            </div>
-            <div>
-              <p class="mini-title">Objects</p>
-              <p><code>IssueReport</code> and <code>User</code> show object state through fields, constructors, getters, and setters.</p>
-            </div>
-            <div>
-              <p class="mini-title">Business Logic</p>
-              <p><code>AuthService</code> and <code>ReportService</code> show methods, parameters, return values, and conditional logic.</p>
-            </div>
-            <div>
-              <p class="mini-title">Persistence</p>
-              <p><code>ReportRepository</code> demonstrates how Java classes can isolate storage behavior from UI and business logic.</p>
-            </div>
-          </div>
-        </section>
 
-        <section class="quote-section">
-          <article class="quote-panel">
-            <p class="eyebrow">Motivation Corner</p>
-            <h2>Keep Going</h2>
-            <p class="quote-panel__copy">
-              Good defenders are not the students who memorized the most words. They are the students who understand what the program is doing and can explain it calmly.
+          <article class="lesson-card topic-output" id="topic-output">
+            <p class="lesson-tag">Encapsulation</p>
+            <h3>Encapsulation means object data is accessed through controlled methods instead of direct public access.</h3>
+            <p class="plain-explain">
+              This keeps state more organized and makes future validation easier to add at the access points.
             </p>
-            <div class="quote-grid">
-              <blockquote>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</blockquote>
-              <blockquote>"Experience is the name everyone gives to their mistakes."</blockquote>
-              <blockquote>"Talk is cheap. Show me the code."</blockquote>
-            </div>
           </article>
+
+          <details class="support-note">
+            <summary>Open support note</summary>
+            <div class="support-note__content">
+              <p><strong>Encapsulation example:</strong> Getters and setters control how fields in <code>IssueReport</code> or <code>User</code> are read and changed.</p>
+              <p><strong>Inheritance example:</strong> <code>App</code> extends JavaFX <code>Application</code>, which shows reuse of framework behavior.</p>
+            </div>
+          </details>
         </section>
       </main>
     </div>

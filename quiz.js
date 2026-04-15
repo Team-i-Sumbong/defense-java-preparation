@@ -1,7 +1,7 @@
 const quizData = {
   easy: {
     title: "Easy Quiz",
-    code: "E",
+    subtitle: "Short concept check for vocabulary and basic roles.",
     questions: [
       {
         topic: "Architecture",
@@ -40,18 +40,6 @@ const quizData = {
         explanation: "A class defines the data and behavior that its objects will have."
       },
       {
-        topic: "OOP Basics",
-        question: "What is an object?",
-        options: [
-          "A file path",
-          "An actual instance created from a class",
-          "A method return type only",
-          "A repository rule"
-        ],
-        answer: 1,
-        explanation: "An object is a real instance created from a class blueprint."
-      },
-      {
         topic: "Model Layer",
         question: "Which of the following is an example of a model class in i-Sumbong?",
         options: [
@@ -76,18 +64,6 @@ const quizData = {
         explanation: "The UI layer handles screen elements and user interaction."
       },
       {
-        topic: "Service Layer",
-        question: "What is the main role of the service layer?",
-        options: [
-          "Drawing the buttons",
-          "Applying business rules",
-          "Storing CSS values",
-          "Replacing all models"
-        ],
-        answer: 1,
-        explanation: "The service layer applies rules and decision-making logic."
-      },
-      {
         topic: "Repository",
         question: "Which layer should save and retrieve data from JSON files?",
         options: [
@@ -98,78 +74,6 @@ const quizData = {
         ],
         answer: 0,
         explanation: "Repositories are responsible for persistence and data access."
-      },
-      {
-        topic: "Methods",
-        question: "When reading a method, what should you check first?",
-        options: [
-          "The file color",
-          "The method name and purpose",
-          "The monitor size",
-          "The browser tab"
-        ],
-        answer: 1,
-        explanation: "The method name is one of the fastest clues about its responsibility."
-      },
-      {
-        topic: "Encapsulation",
-        question: "Why are getters and setters commonly used?",
-        options: [
-          "To make classes impossible to read",
-          "To avoid creating objects",
-          "To control access to object data",
-          "To replace constructors"
-        ],
-        answer: 2,
-        explanation: "Getters and setters support encapsulation by controlling how data is accessed and changed."
-      },
-      {
-        topic: "Flow",
-        question: "In simple terms, what happens after the UI sends login data to AuthService?",
-        options: [
-          "The app deletes the model",
-          "The service checks business rules and account data",
-          "The CSS file changes the password",
-          "The repository becomes the UI"
-        ],
-        answer: 1,
-        explanation: "AuthService validates the input and checks stored account information before deciding the result."
-      },
-      {
-        topic: "Defense",
-        question: "Which answer is stronger during defense?",
-        options: [
-          "Because the code is written that way",
-          "Because we wanted more files only",
-          "Because each layer has a focused responsibility",
-          "Because Java requires it every time"
-        ],
-        answer: 2,
-        explanation: "Strong defense answers explain the principle and the reason behind the design."
-      },
-      {
-        topic: "Evidence",
-        question: "What does AuthPortalView mainly demonstrate?",
-        options: [
-          "UI interaction",
-          "JSON storage",
-          "Enum declaration",
-          "Database indexing"
-        ],
-        answer: 0,
-        explanation: "AuthPortalView is part of the interface layer and handles user interaction."
-      },
-      {
-        topic: "Responsibility",
-        question: "Which choice best describes ReportRepository?",
-        options: [
-          "A class for persistence responsibility",
-          "A design for drawing dashboards",
-          "A class for storing CSS styles",
-          "A replacement for all services"
-        ],
-        answer: 0,
-        explanation: "ReportRepository focuses on saving and retrieving report data."
       },
       {
         topic: "Mindset",
@@ -187,7 +91,7 @@ const quizData = {
   },
   medium: {
     title: "Medium Quiz",
-    code: "M",
+    subtitle: "Practice responsibilities, flow tracing, and better explanations.",
     questions: [
       {
         topic: "Architecture",
@@ -214,18 +118,6 @@ const quizData = {
         explanation: "The UI gathers input, the service evaluates rules, repositories provide data, and the UI shows the result."
       },
       {
-        topic: "Models",
-        question: "Why is IssueReport considered a strong model example?",
-        options: [
-          "Because it stores screen color values",
-          "Because it represents a real report entity with structured data",
-          "Because it contains all UI interactions",
-          "Because it replaces the repository"
-        ],
-        answer: 1,
-        explanation: "IssueReport models a real thing in the problem domain: a submitted report."
-      },
-      {
         topic: "Repositories",
         question: "What would be a design problem if AuthPortalView handled JSON persistence directly?",
         options: [
@@ -239,7 +131,7 @@ const quizData = {
       },
       {
         topic: "Methods",
-        question: "Which statement best explains `registerResident(User user)`?",
+        question: "Which statement best explains registerResident(User user)?",
         options: [
           "It returns a UI screen",
           "It receives a user, validates it, assigns defaults, saves it, and reports success",
@@ -248,18 +140,6 @@ const quizData = {
         ],
         answer: 1,
         explanation: "That method follows a clear business operation: validate, prepare, save, and return status."
-      },
-      {
-        topic: "Encapsulation",
-        question: "What future benefit does encapsulation provide besides organization?",
-        options: [
-          "It allows validation logic to be added in controlled access points later",
-          "It removes the need for object creation",
-          "It forces all fields to be public",
-          "It replaces constructors with enums"
-        ],
-        answer: 0,
-        explanation: "Encapsulation makes future validation and control easier because access happens through methods."
       },
       {
         topic: "Critique",
@@ -274,18 +154,6 @@ const quizData = {
         explanation: "It is functional, but its size makes it a reasonable maintainability discussion point."
       },
       {
-        topic: "Responsibility",
-        question: "Which layer should decide whether a resident login is allowed?",
-        options: [
-          "Service layer",
-          "CSS layer",
-          "Logo image layer",
-          "Table layout layer"
-        ],
-        answer: 0,
-        explanation: "Login permission is a business-rule decision, so it belongs in the service layer."
-      },
-      {
         topic: "Defense",
         question: "A panelist asks why repositories exist. Which answer is best?",
         options: [
@@ -296,66 +164,6 @@ const quizData = {
         ],
         answer: 1,
         explanation: "Repositories isolate persistence responsibility from other system concerns."
-      },
-      {
-        topic: "Abstraction",
-        question: "What does abstraction help students do during defense?",
-        options: [
-          "Hide every answer completely",
-          "Describe the important role of a component without drowning in low-level detail",
-          "Ignore the system design",
-          "Skip explaining classes"
-        ],
-        answer: 1,
-        explanation: "Abstraction helps explain the purpose of a component at the right level."
-      },
-      {
-        topic: "Program Start",
-        question: "Why is App.java important beyond just being the first file that runs?",
-        options: [
-          "It demonstrates startup flow and view switching responsibilities",
-          "It stores all reports permanently",
-          "It replaces the repository layer",
-          "It is the same as IssueReport"
-        ],
-        answer: 0,
-        explanation: "App.java shows how the application launches and manages the initial navigation flow."
-      },
-      {
-        topic: "Traceability",
-        question: "If a student needs to explain report submission, what should they trace?",
-        options: [
-          "Only the color palette",
-          "Input, service validation, repository save, and resulting feedback",
-          "Only the logo file",
-          "Only the constructor names"
-        ],
-        answer: 1,
-        explanation: "A strong flow explanation follows input, processing, persistence, and output."
-      },
-      {
-        topic: "Comparisons",
-        question: "How is a service class different from a model class?",
-        options: [
-          "A service applies rules; a model represents structured data",
-          "A service draws buttons; a model writes CSS",
-          "A service is always smaller; a model is always larger",
-          "There is no difference"
-        ],
-        answer: 0,
-        explanation: "Services perform operations and decision-making, while models represent entities and their data."
-      },
-      {
-        topic: "Review",
-        question: "Which question reflects critical code reading?",
-        options: [
-          "Does this class do too many unrelated things?",
-          "Does this file name look lucky?",
-          "Is the code using enough blank lines only?",
-          "Can we avoid principles during defense?"
-        ],
-        answer: 0,
-        explanation: "Critical reading looks at responsibility, clarity, maintainability, and design quality."
       },
       {
         topic: "Communication",
@@ -373,7 +181,7 @@ const quizData = {
   },
   hard: {
     title: "Hard Quiz",
-    code: "H",
+    subtitle: "Focus on critique, tradeoffs, and principle-first defense reasoning.",
     questions: [
       {
         topic: "Defense Reasoning",
@@ -412,42 +220,6 @@ const quizData = {
         explanation: "Moving persistence into models mixes data representation with storage responsibility."
       },
       {
-        topic: "Abstraction",
-        question: "Which explanation best uses abstraction to describe IssueReport?",
-        options: [
-          "It is a class with many fields, braces, and semicolons",
-          "It is a structured representation of a resident-submitted concern used across the system",
-          "It is only a place to store getter names",
-          "It is the same as the repository"
-        ],
-        answer: 1,
-        explanation: "Abstraction focuses on the meaningful role of the class rather than low-level syntax."
-      },
-      {
-        topic: "Tradeoffs",
-        question: "Why is 'each layer has one main job' not just a textbook phrase in this project?",
-        options: [
-          "Because the actual classes demonstrate different responsibilities that can be traced in login and report flow",
-          "Because all files are equal no matter what they do",
-          "Because JavaFX prevents layered design",
-          "Because file count alone proves quality"
-        ],
-        answer: 0,
-        explanation: "The principle is visible in the app's real flow and class roles."
-      },
-      {
-        topic: "Defense Quality",
-        question: "Which of the following is the strongest defense response to 'Why did you use repositories?'",
-        options: [
-          "Repositories are there because many Java projects have them",
-          "Repositories isolate data access, so UI and service classes stay focused on interaction and rules rather than storage details",
-          "Repositories exist mainly to increase the number of folders",
-          "Repositories are another word for methods"
-        ],
-        answer: 1,
-        explanation: "A strong answer explains the principle and the benefit to the system."
-      },
-      {
         topic: "Flow Analysis",
         question: "Which statement most accurately describes report submission in principle-first language?",
         options: [
@@ -458,18 +230,6 @@ const quizData = {
         ],
         answer: 0,
         explanation: "This answer describes the full flow at the correct architectural level."
-      },
-      {
-        topic: "Maintainability",
-        question: "What is the best reason to avoid putting business rules directly in the UI?",
-        options: [
-          "It makes the font style harder to edit",
-          "It causes responsibility overlap, making the code harder to maintain and reuse",
-          "It removes all constructors automatically",
-          "It prevents models from existing"
-        ],
-        answer: 1,
-        explanation: "Mixing UI and business logic makes the system harder to change and reason about."
       },
       {
         topic: "Encapsulation",
@@ -484,18 +244,6 @@ const quizData = {
         explanation: "Encapsulation is valuable because it supports control, consistency, and maintainability."
       },
       {
-        topic: "Evaluation",
-        question: "If a panelist asks for a weakness in the current architecture, which answer is most mature?",
-        options: [
-          "There are no weaknesses at all",
-          "The UI flow is working, but some UI classes are large enough that future modularization would improve maintainability",
-          "Everything should be rewritten immediately",
-          "Java is the only weakness"
-        ],
-        answer: 1,
-        explanation: "A mature answer acknowledges a realistic improvement area without dismissing the existing work."
-      },
-      {
         topic: "Evidence",
         question: "What is the best way to use App.java as defense evidence?",
         options: [
@@ -508,52 +256,16 @@ const quizData = {
         explanation: "App.java is evidence for startup and navigation responsibilities."
       },
       {
-        topic: "Precision",
-        question: "Which phrase is more academically precise?",
-        options: [
-          "AuthService is there because it feels organized",
-          "AuthService centralizes account-related business rules such as validation, verification, and access checks",
-          "AuthService is basically random but useful",
-          "AuthService is only for making the code longer"
-        ],
-        answer: 1,
-        explanation: "This wording is precise, principle-based, and tied to actual responsibility."
-      },
-      {
-        topic: "Analysis",
-        question: "Why is ReportRepository easier to explain during defense than a mixed-responsibility class would be?",
-        options: [
-          "Because its purpose is narrow and focused on persistence",
-          "Because it contains every concern in one place",
-          "Because it avoids methods",
-          "Because it removes the need for models"
-        ],
-        answer: 0,
-        explanation: "Focused classes are easier to explain because their responsibility is clear."
-      },
-      {
-        topic: "Defense Strategy",
-        question: "When answering 'How does the login flow move through the system?', what makes the best structure?",
-        options: [
-          "List filenames only",
-          "Start with the principle of layered flow, then trace UI input, service validation, repository lookup, and resulting output",
-          "Explain only the final dashboard screen",
-          "Skip the service layer"
-        ],
-        answer: 1,
-        explanation: "The best answer combines architecture with a traceable system flow."
-      },
-      {
         topic: "Professor Lens",
-        question: "What separates a senior-level explanation from a student-level memorized answer?",
+        question: "What separates a strong explanation from a memorized student answer?",
         options: [
-          "The senior-level explanation identifies principles, evidence, tradeoffs, and rationale",
-          "The student-level answer is always longer",
-          "The senior-level answer avoids naming classes completely",
+          "The strong explanation identifies principles, evidence, tradeoffs, and rationale",
+          "The memorized answer is always longer",
+          "The strong explanation avoids naming classes completely",
           "There is no difference"
         ],
         answer: 0,
-        explanation: "Senior-level explanations show reasoning, tradeoffs, and design understanding."
+        explanation: "Strong explanations show reasoning, tradeoffs, and design understanding."
       }
     ]
   }
@@ -561,11 +273,11 @@ const quizData = {
 
 const difficultyButtons = document.querySelectorAll(".difficulty-button");
 const questionList = document.getElementById("question-list");
+const totalCount = document.getElementById("total-count");
 const answeredCount = document.getElementById("answered-count");
 const scoreCount = document.getElementById("score-count");
 const quizTitle = document.getElementById("quiz-title");
-const difficultyCode = document.getElementById("difficulty-code");
-const difficultyLabel = document.getElementById("difficulty-label");
+const quizSubtitle = document.getElementById("quiz-subtitle");
 const progressBarFill = document.getElementById("progress-bar-fill");
 const submitQuizButton = document.getElementById("submit-quiz");
 const resetQuizButton = document.getElementById("reset-quiz");
@@ -588,11 +300,14 @@ function updateSummary() {
   const answered = Object.keys(selectedAnswers).length;
   const score = submitted ? calculateScore() : 0;
 
+  if (totalCount) {
+    totalCount.textContent = String(total);
+  }
+
   answeredCount.textContent = String(answered);
   scoreCount.textContent = String(score);
   quizTitle.textContent = quiz.title;
-  difficultyCode.textContent = quiz.code;
-  difficultyLabel.textContent = activeDifficulty.charAt(0).toUpperCase() + activeDifficulty.slice(1);
+  quizSubtitle.textContent = quiz.subtitle;
   progressBarFill.style.width = `${(answered / total) * 100}%`;
 }
 
@@ -607,18 +322,18 @@ function getResultMessage(score, total) {
   const ratio = score / total;
 
   if (ratio === 1) {
-    return "Excellent work. You answered every question correctly and showed strong command of the principles behind the system.";
+    return "Excellent work. You answered every question correctly and showed strong command of the defense ideas in this set.";
   }
 
-  if (ratio >= 0.8) {
-    return "Strong result. You are explaining the architecture well and are close to defense-ready at this difficulty.";
+  if (ratio >= 0.71) {
+    return "Strong result. Review the missed explanations once, then move to the next difficulty.";
   }
 
-  if (ratio >= 0.6) {
-    return "Solid progress. Review the feedback, especially the questions that test reasoning and responsibility boundaries.";
+  if (ratio >= 0.43) {
+    return "Solid progress. Focus on the missed questions, especially the ones about responsibility and reasoning.";
   }
 
-  return "Keep practicing. Focus on principles like separation of concerns, model responsibility, and flow tracing before moving up.";
+  return "Keep practicing. Revisit the course page and Java review, then try this short set again.";
 }
 
 function renderResult() {
@@ -730,8 +445,8 @@ function renderQuiz() {
 
   if (!submitted) {
     resultTitle.textContent = "Finish the quiz to see your evaluation.";
-    resultScore.textContent = "0 / 15";
-    resultCopy.textContent = "This panel will summarize your performance and tell you whether you are ready to move up in difficulty.";
+    resultScore.textContent = `0 / ${quiz.questions.length}`;
+    resultCopy.textContent = "This panel will summarize your performance and tell you what to review next.";
   }
 }
 
